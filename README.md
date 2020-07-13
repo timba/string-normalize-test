@@ -65,6 +65,18 @@ RUN apk update && apk add icu
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 ```
 
+## How to run tests
+
+```
+docker build .
+```
+
+or if elevated permissions required:
+
+```bash
+sudo docker build .
+```
+
 ## Tets results
 
 ### Debian
