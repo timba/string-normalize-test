@@ -35,7 +35,7 @@ If turn off invariant setting using env variable `DOTNET_SYSTEM_GLOBALIZATION_IN
 DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 ```
 
-The following runtime error raised:
+then the following runtime error is raised:
 
 ```
 Process terminated. Couldn't find a valid ICU package installed on the system. Set the configuration flag System.Globalization.Invariant to true if you want to run with no globalization support.
@@ -54,7 +54,7 @@ This happens because ICU (International Components for Unicode library) librarie
 apk update && apk add icu
 ```
 
-After that th test passed successfully.
+After that the test passed successfully.
 
 ## Docker fix for Alpine
 
@@ -67,7 +67,7 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 ## How to run tests
 
-```
+```bash
 docker build .
 ```
 
@@ -75,6 +75,12 @@ or if elevated permissions required:
 
 ```bash
 sudo docker build .
+```
+
+If you want to run test but it was cached by Docker, add `--no-cache` parameter:
+
+```bash
+sudo docker build . --no-cache
 ```
 
 ## Tets results
